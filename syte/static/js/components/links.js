@@ -12,13 +12,26 @@ function setupLinks() {
          $('#dribbble-profile').remove();
          $('#twitter-profile').remove();
          $('#instagram-profile').remove();
+         $('#about-profile').remove();
          $('.modal-backdrop').remove();
          adjustSelection('home-link');
+      }
+      else if (this.id === 'about-link') {
+
+         $('#github-profile').remove();
+         $('#dribbble-profile').remove();
+         $('#twitter-profile').remove();
+         $('#instagram-profile').remove();
+         $('.modal-backdrop').remove();
+         adjustSelection('about-link');
+
+         setupAbout(this);
       }
       else if(this.id == 'instagram-link' && instagram_integration_enabled) {
          $('#github-profile').remove();
          $('#dribbble-profile').remove();
          $('#twitter-profile').remove();
+         $('#about-profile').remove();
          $('.modal-backdrop').remove();
          adjustSelection('instagram-link');
 
@@ -29,6 +42,7 @@ function setupLinks() {
          $('#github-profile').remove();
          $('#dribbble-profile').remove();
          $('#instagram-profile').remove();
+         $('#about-profile').remove();
          $('.modal-backdrop').remove();
          adjustSelection('twitter-link');
 
@@ -39,6 +53,7 @@ function setupLinks() {
         $('#twitter-profile').remove();
         $('#dribbble-profile').remove();
         $('#instagram-profile').remove();
+         $('#about-profile').remove();
         $('.modal-backdrop').remove();
         adjustSelection('github-link');
 
@@ -49,6 +64,7 @@ function setupLinks() {
          $('#twitter-profile').remove();
          $('#github-profile').remove();
          $('#instagram-profile').remove();
+         $('#about-profile').remove();
          $('.modal-backdrop').remove();
          adjustSelection('dribbble-link');
 

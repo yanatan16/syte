@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="description" content="Personal website and blog of software engineer, mathematician, and saberist Jon Eisen." />
+  <meta name="description" content="Personal website and blog of the multi-talented Jon Eisen." />
   <meta name="keywords" content="Jon Eisen, developer, mathematician, engineer, software, baseball, sabermetrics" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block pagetitle %}Jon Eisen{% endblock %}</title>
@@ -21,15 +21,16 @@
       <a href="/" rel="home"></a>
     </div>
     <h1>Jon Eisen</h1>
-    <h2>Software Engineer, Mathematician, and Saberist</h2>
+    <h2>Software Engineer, Mathematician, Saberist, etc.</h2>
   </hgroup>
   <nav>
     <ul class="main-nav">
-      <li><a href="/" id="home-link">Home</a></li>
+       <li><a href="/" id="home-link">Home</a></li>
+       <li><a href="/" id="about-link">About</a></li>
       <!--      <li><a href="http://twitter.com/#!/jm_eisen" id="twitter-link">Twitter</a></li> -->
       <li><a href="http://github.com/yanatan16" id="github-link">My Github</a></li>
       <!--      <li><a href="http://dribbble.com/rigoneri" id="dribbble-link">Dribbble</a></li> -->
-      <li><a href="http://instagr.am/p/Lau1VrEPbt" id="instagram-link">Saveannah's Instagram</a></li>
+      <li><a href="http://instagr.am/p/K1K92_k87U" id="instagram-link">Savannah's Instagram</a></li>
       <li><a href="mailto:jon.m.eisen@gmail.com?subject=Hello" id="contact-link">Contact</a></li>
     </ul>
   </nav>
@@ -68,6 +69,7 @@ var twitter_integration_enabled = {% if TWITTER_INTEGRATION_ENABLED %}true{% els
 <script src="{{ MEDIA_URL }}js/components/blog-posts.js"></script>
 <script src="{{ MEDIA_URL }}js/components/links.js"></script>
 
+<script src="{{ MEDIA_URL }}js/components/about.js"></script>
 {% if TWITTER_INTEGRATION_ENABLED %}<script src="{{ MEDIA_URL }}js/components/twitter.js"></script>{% endif %}
 {% if GITHUB_INTEGRATION_ENABLED %}<script src="{{ MEDIA_URL }}js/components/github.js"></script>{% endif %}
 {% if DRIBBBLE_INTEGRATION_ENABLED %}<script src="{{ MEDIA_URL }}js/components/dribbble.js"></script>{% endif %}
