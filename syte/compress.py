@@ -49,6 +49,7 @@ def compress_js():
       'components/mobile.js',
       'components/blog-posts.js',
       'components/links.js',
+      'components/about.js',
     ]
 
     if settings.TWITTER_INTEGRATION_ENABLED:
