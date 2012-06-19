@@ -230,13 +230,8 @@ def instagram_next(request, max_id):
                         content_type=media_r.headers['content-type'])
 
 def about(request):
-   #TODO add read in about-me page
-   about = {"stats": 
-               [{"question": "Kirk or Picard?", "answer": "Picard."}],
-            "stories":
-               [{"title": "General", "description": "I'm Jon" }]
-           }
+   import about
 
-   return HttpResponse(content=json.dumps(about), content_type='application/json')
+   return HttpResponse(content=json.dumps(about.me()), content_type='application/json')
 
 
