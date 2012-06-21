@@ -50,7 +50,7 @@ def github(request, username):
         username,
         settings.GITHUB_ACCESS_TOKEN))
 
-    repos_r = requests.get('{0}users/{1}/repos?access_token={2}'.format(
+    repos_r = requests.get('{0}users/{1}/repos?sort=updated&access_token={2}'.format(
         settings.GITHUB_API_URL,
         username,
         settings.GITHUB_ACCESS_TOKEN))
