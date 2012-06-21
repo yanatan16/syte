@@ -1,4 +1,4 @@
 *.pyc
 .DS_Store
 venv
-syte/syte-settings.py
+syte/syte_settings.py
