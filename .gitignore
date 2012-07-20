@@ -2,3 +2,4 @@
 .DS_Store
 venv
 syte/syte_settings.py
+*~

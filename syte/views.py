@@ -123,6 +123,9 @@ def blog_post(request, post_id):
             f_date = datetime.strptime(post['date'], '%Y-%m-%d %H:%M:%S %Z')
             post['formated_date'] = f_date.strftime('%B %d, %Y')
 
+            if settings.DISQUS_INTEGRATION_ENABLED:
+                post['disqus_enabled'] = True
+
             path_to_here = os.path.abspath(os.path.dirname(__file__))
             f = open('{0}/static/templates/blog-post-{1}.html'.format(path_to_here, post['type']), 'r')
             f_data = f.read()
@@ -234,4 +237,22 @@ def about(request):
 
    return HttpResponse(content=json.dumps(about.me()), content_type='application/json')
 
+def lastfm(request, username):
+    url = '{0}?method=user.getrecenttracks&user={1}&api_key={2}&format=json'.format(
+                                                    settings.LASTFM_API_URL,
+                                                    settings.LASTFM_USERNAME,
+                                                    settings.LASTFM_API_KEY)
+    tracks = requests.get(url)
+    url = '{0}?method=user.getinfo&user={1}&api_key={2}&format=json'.format(
+                                                    settings.LASTFM_API_URL,
+                                                    settings.LASTFM_USERNAME,
+                                                    settings.LASTFM_API_KEY)
+    user = requests.get(url)
+    context = {
+        'user_info': user.json,
+        'recenttracks': tracks.json,
+    }
+
+    return HttpResponse(content=json.dumps(context), status=user.status_code,
+                        content_type=user.headers['content-type'])
 
